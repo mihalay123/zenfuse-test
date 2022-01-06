@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import Slider from './components/Slider'
+import './output.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="bg-white h-screen position: absolute inset-2/4">
+			{/* <div className="w-12 bg-white rounded-lg hover:bg-blue-300 ml-32">
+				<h1 className="font-sans text-xl text-center">hi</h1>
+			</div> */}
+			<Slider />
+		</div>
+	)
 }
 
-export default App;
+export default App
