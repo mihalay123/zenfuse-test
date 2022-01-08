@@ -21,7 +21,7 @@ function SliderContainer() {
 				type="text"
 				min={min}
 				max={max}
-				value={sliderValue + '%'}
+				value={sliderValue}
 				onChange={handleTextInput}
 				className="w-[62px] h-[36px] text-center border border-solid border-cool-gray-200 rounded-lg text-xs dark:bg-[#262626] dark:border-[#A3A3A3] dark:text-white font-['Inter']"
 			></input>
