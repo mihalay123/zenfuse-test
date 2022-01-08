@@ -1,0 +1,22 @@
+input[type="range"] {
+  background-image: linear-gradient(to right, #2563EB 0% 50%, #E5E7EB 50% 100%);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border: 1px solid #2563EB;
+  border-radius: 3px;
+  z-index: 1;
+  position: relative;
+}
+
+.dot.active {
+  background-color: #2563EB;
+}
+
+.dot.disabled {
+  background-color: #E5E7EB;
+}

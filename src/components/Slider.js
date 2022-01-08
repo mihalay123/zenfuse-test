@@ -1,46 +1,39 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import './Slider.css'
+import '../output.css'
+import { min, max, dotsArr } from '../constants/sliderInfo.js'
 
-function Slider() {
-	const [sliderValue, setSliderValue] = useState(0)
-
-	const min = 0
-	const max = 100
-
+function Slider({ sliderValue, setSliderValue }) {
 	const handleSlider = (event) => {
 		setSliderValue(event.target.value)
 	}
 
-	const handleTextInput = (event) => {
-		if (event.target.value < 0) {
-			event.target.value = 0
-		}
-		if (event.target.value > 100) {
-			event.target.value = 100
-		}
-		setSliderValue(event.target.value)
-	}
-
 	return (
-		<form className="w-64 h-20 flex flex-row justify-center items-center bg-white box-border rounded-2xl border border-solid border-cool-gray-200 shadow-[0_0_10px_rgba(0,0,0,0.1)]">
+		<div className="w-[140px]">
 			<input
 				type="range"
 				min={min}
 				max={max}
-				step={0.05}
+				step={0.01}
 				value={sliderValue}
-				onChange={handleSlider}
-				className="w-36 form-range form-range"
+				onInput={handleSlider}
+				className="w-[140px] h-[2px] appearance-none cursor-pointer"
+				id="slider"
+				style={{
+					backgroundImage: `linear-gradient(to right, #2563EB 0% ${sliderValue}%, #E5E7EB ${sliderValue}% 100%)`,
+				}}
 			></input>
-			<input
-				type="text"
-				min={min}
-				max={max}
-				value={sliderValue}
-				onChange={handleTextInput}
-				className="w-14"
-				// pattern="^([0-9]{1,2}){1}(\.[0-9]{2})?$"
-			></input>
-		</form>
+			<div className="w-[140px] h-[6px] flex flex-row flex-nowrap justify-between relative bottom-[10px] pointer-events-none">
+				{dotsArr.map((dotValue) => (
+					<div
+						key={dotValue}
+						className={`dot ${
+							dotValue <= sliderValue ? 'active' : 'disabled'
+						} w-[6px] h-[6px] rounded-[3px]`}
+					></div>
+				))}
+			</div>
+		</div>
 	)
 }
 

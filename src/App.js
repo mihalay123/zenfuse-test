@@ -1,13 +1,15 @@
-import Slider from './components/Slider'
+import { useEffect } from 'react'
+import SliderContainer from './components/SliderContainer'
+import Switcher from './components/Switcher'
 import './output.css'
 
 function App() {
 	return (
-		<div className="bg-white h-screen position: absolute inset-2/4">
-			{/* <div className="w-12 bg-white rounded-lg hover:bg-blue-300 ml-32">
-				<h1 className="font-sans text-xl text-center">hi</h1>
-			</div> */}
-			<Slider />
+		<div className="w-[100vh] h-[100vh] bg-white dark:bg-[#171717]">
+			<div className="w-[338px] h-[76px] position: absolute inset-2/4 flex flex-row justify-between items-center dark:true-gray-900 bg-opacity-0">
+				<Switcher />
+				<SliderContainer />
+			</div>
 		</div>
 	)
 }
